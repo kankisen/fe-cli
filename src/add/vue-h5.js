@@ -26,7 +26,8 @@ const vueh5 = () => {
     // 无存在页面模块 可正常添加
     pages.forEach(v => {
       shell.mkdir('-p', `./src/views/${v}`)
-      shell.cp(path.resolve(__dirname, './vue-h5-template/*'), `./src/views/${v}`)
+      shell.cp(path.resolve(__dirname, './vue-h5-template/views/*'), `./src/views/${v}`)
+      shell.cp(path.resolve(__dirname, './vue-h5-template/template.html'), `./template/${v}.html`)
     })
   }
 }
