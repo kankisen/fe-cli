@@ -51,7 +51,7 @@ const installType = () => {
       type = v[0]
     }
   })
-  return type
+  return type || 'npm'
 }
 
 

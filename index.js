@@ -10,8 +10,8 @@ const emoji = require('node-emoji')
 const fs = require('fs')
 const path = require('path')
 const dispatch = require('./src/dispatch')
-const { templateGitAddress } = require('./src/map')
-const { readJson, writeJson } = require('./src/opearJson')
+const { templateGitAddress } = require('./src/pathMap')
+const { readJson, writeJson } = require('./src/utils')
 const { install } = require('./src/install')
 
 // 缺少参数错误修改
@@ -57,7 +57,8 @@ commander
       {
         type: 'input',
         name: 'proDesc',
-        message: emoji.emojify(':writing_hand:  项目描述'),        default: 'A Template Project'
+        message: emoji.emojify(':writing_hand:  项目描述'),
+        default: 'A Template Project'
       },
       {
         type: 'input',
@@ -69,7 +70,7 @@ commander
         type: 'list',
         name: 'proTemplate',
         message: emoji.emojify(':bookmark_tabs:  请选择使用的模板'),
-        choices: ['vue-web', 'vue-h5', 'react-web', 'react-h5', 'taro'],
+        choices: ['vue-web', 'vue-h5', 'react-web', 'taro'],
       },
     ]).then(res => {
       const spinner = ora({
@@ -83,8 +84,9 @@ commander
       })
       const { proDesc, proDeveloper, proTemplate } = res
       
-      // 暂时只开发vue-h5模板  todo  后续模板待补充
-      if (proTemplate !== 'vue-h5') {
+      // 部分模板待补充 todo
+      console.log(templateGitAddress[proTemplate])
+      if (!templateGitAddress[proTemplate]) {
         console.log(chalk.bold.red(`\n${emoji.emojify(':sob:')}  ${proTemplate}模板暂未开放\n`))
         process.exit()
       }
