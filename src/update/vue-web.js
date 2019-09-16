@@ -119,4 +119,4 @@ const privateTokenErrorFarmat = () => {
   })
 }
 
-module.exports = vueh5;
+module.exports = vueweb;
