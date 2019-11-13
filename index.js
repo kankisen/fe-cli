@@ -70,7 +70,7 @@ commander
         type: 'list',
         name: 'proTemplate',
         message: emoji.emojify(':bookmark_tabs:  请选择使用的模板'),
-        choices: ['vue-web', 'vue-h5', 'react-web', 'taro'],
+        choices: [...Object.keys(templateGitAddress)],
       },
     ]).then(res => {
       const spinner = ora({

@@ -6,6 +6,7 @@
 const updateCollect = {
   'vue-h5': require('./update/vue-h5'),
   'vue-web': require('./update/vue-web'),
+  'vue-web-cls': require('./update/vue-web-cls'),
   // 'react-h5': require('./update/react-h5'),
   'react-web': require('./update/react-web'),
   'taro': require('./update/taro')
@@ -15,6 +16,7 @@ const updateCollect = {
 const addCollect = {
   'vue-h5': require('./add/vue-h5'),
   'vue-web': require('./add/vue-web'),
+  'vue-web-cls': require('./add/vue-web-cls'),
   // 'react-h5': require('./add/react-h5'),
   'react-web': require('./add/react-web'),
   'taro': require('./add/taro')
