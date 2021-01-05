@@ -9,7 +9,7 @@
   "author": "kankisen",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "chalk": "^2.4.2",
     "commander": "^2.20.0",
     "figlet": "^1.2.3",
